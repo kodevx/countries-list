@@ -1,6 +1,7 @@
+'use client';
 import Link from "next/link";
 
-const Header = (props) => { 
+const Header = (props) => {
 
     return (
         <header>
