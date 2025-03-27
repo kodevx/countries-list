@@ -16,48 +16,50 @@ const Header = (props) => {
 
     return (
         <header>
-            <nav className="navbar navbar-light bg-light justify-content-between">
-                <Link className="navbar-brand" href={'/'}>
-                    Countries
-                </Link>
-                <div>
-                    <ul className="nav">
-                        <li className="nav-item">
-                            <a className={`nav-link ${isLinksActive ? '' : 'disabled'}`} onClick={() => handleRegionAndCountries('All')}>
-                                All
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a className={`nav-link ${isLinksActive ? '' : 'disabled'}`} onClick={() => handleRegionAndCountries('Asia')}>
-                                Asia
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a className={`nav-link ${isLinksActive ? '' : 'disabled'}`} onClick={() => handleRegionAndCountries('Africa')}>
-                                Africa
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a className={`nav-link ${isLinksActive ? '' : 'disabled'}`} onClick={() => handleRegionAndCountries('Europe')} href="#">
-                                Europe
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a className={`nav-link ${isLinksActive ? '' : 'disabled'}`} onClick={() => handleRegionAndCountries('Americas')} href="#">
-                                Americas
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a className={`nav-link ${isLinksActive ? '' : 'disabled'}`} onClick={() => handleRegionAndCountries('Oceania')} href="#">
-                                Oceania
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a className={`nav-link ${isLinksActive ? '' : 'disabled'}`} onClick={() => handleRegionAndCountries('Polar')} href="#">
-                                Polar
-                            </a>
-                        </li>
-                    </ul>
+            <nav className="navbar navbar-light bg-light">
+                <div className="d-flex justify-content-between">
+                    <Link className="h4 navbar-brand" href={'/'}>
+                        Countries
+                    </Link>
+                    <div>
+                        <ul className="nav">
+                            <li className="nav-item">
+                                <a className={`nav-link ${isLinksActive ? '' : 'disabled'}`} onClick={() => handleRegionAndCountries('All')}>
+                                    All
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className={`nav-link ${isLinksActive ? '' : 'disabled'}`} onClick={() => handleRegionAndCountries('Asia')}>
+                                    Asia
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className={`nav-link ${isLinksActive ? '' : 'disabled'}`} onClick={() => handleRegionAndCountries('Africa')}>
+                                    Africa
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className={`nav-link ${isLinksActive ? '' : 'disabled'}`} onClick={() => handleRegionAndCountries('Europe')} href="#">
+                                    Europe
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className={`nav-link ${isLinksActive ? '' : 'disabled'}`} onClick={() => handleRegionAndCountries('Americas')} href="#">
+                                    Americas
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className={`nav-link ${isLinksActive ? '' : 'disabled'}`} onClick={() => handleRegionAndCountries('Oceania')} href="#">
+                                    Oceania
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className={`nav-link ${isLinksActive ? '' : 'disabled'}`} onClick={() => handleRegionAndCountries('Polar')} href="#">
+                                    Polar
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
         </header>
