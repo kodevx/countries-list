@@ -12,4 +12,3 @@ export const getCountriesOfSelectedRegion = (region, countries) => {
 
     return refinedCountries || countries;
 }
-
