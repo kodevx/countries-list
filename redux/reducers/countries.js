@@ -1,42 +1,43 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { getCountriesOfSelectedRegion } from '@/utils/getRefinedCountries';
-
 const initialState = {
     selectedRegion: '',
-    refinedCountries: [],
+    refinedCountriesList: [],
     allCountries: [],
     pageSize: 14,
     totalCountriesCount: 0
 }
 
 const countriesSlice = createSlice({
-    name: countries,
+    name: 'countries',
     initialState,
-    reducers:  {
+    reducers: {
         setAllCountries: (state, action) => {
             return {
                 ...state,
                 selectedRegion: 'All',
-                countriesOfSelectedRegion: action.payload.countries,
-                allCountries: action.payload.countries,
+                refinedCountriesList: action.payload,
+                allCountries: action.payload,
                 pageSize: 14,
-                totalCountriesCount: action.payload.countries.length
+                totalCountriesCount: action.payload.length
             }
         },
         setSelectedRegion: (state, action) => {
-            let countries = getCountriesOfSelectedRegion(state.allCountries, action.payload.region);
-
             return {
                 ...state,
                 selectedRegion: action.payload.region,
-                refinedCountries: countries,
-                totalCountriesCount: countries.length
+            }
+        },
+        setRefinedCountries: (state, action) => {
+            return {
+                ...state,
+                refinedCountriesList: action.payload,
+                totalCountriesCount: action.payload.length
             }
         }
     }
-})
+});
 
-export const { setAllCountries, setSelectedRegion } = countriesSlice.actions;
+export const { setAllCountries, setSelectedRegion, setRefinedCountries } = countriesSlice.actions;
 
 export default countriesSlice.reducer;

@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ReduxProvider } from "./reduxProvider";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -16,16 +17,18 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Countries",
-  description: "Countries of Region Listing App",
+  description: "Countries Listing App",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Header />
-        {children}
-        <Footer />
+        <ReduxProvider>
+          <Header />
+          {children}
+          <Footer />
+        </ReduxProvider>
       </body>
     </html>
   );
