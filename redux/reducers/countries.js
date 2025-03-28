@@ -25,7 +25,7 @@ const countriesSlice = createSlice({
         setSelectedRegion: (state, action) => {
             return {
                 ...state,
-                selectedRegion: action.payload.region,
+                selectedRegion: action.payload,
             }
         },
         setRefinedCountries: (state, action) => {

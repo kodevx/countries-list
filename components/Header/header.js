@@ -16,47 +16,58 @@ const Header = (props) => {
 
     return (
         <header>
-            <nav className="navbar navbar-light bg-light">
-                <div className="d-flex justify-content-between">
-                    <Link className="h4 navbar-brand" href={'/'}>
+            <nav className="navbar navbar-expand-lg navbar-light">
+                <div className="container-sm">
+                    <a className="navbar-brand text-dark fs-4 fw-bold" href={'/'}>
                         Countries
-                    </Link>
-                    <div>
-                        <ul className="nav">
-                            <li className="nav-item">
-                                <a className={`nav-link ${isLinksActive ? '' : 'disabled'}`} onClick={() => handleRegionAndCountries('All')}>
+                    </a>
+                    <button 
+                        type='button'
+                        className="navbar-toggler" 
+                        data-bs-toggler="collapse" 
+                        data-bs-target="#regionsList" 
+                        aria-controls="regionsList"
+                        aria-expanded="false"
+                        aria-label='Toggle Navigation'
+                    >
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse justify-content-end align-center" id="regionsList">
+                        <ul className="navbar-nav mb-2 mx-lg-0">
+                            <li className="nav-item mx-2">
+                                <button className={`nav-link ps-0 pe-3 py-2 border border-top-0 border-start-0 border-end-0 ${selectedRegion === 'All' ? 'border-4 border-dark': 'border-bottom-0 border-light'} ${isLinksActive ? 'active border border-bottom-3' : 'disabled'}`} onClick={() => handleRegionAndCountries('All')}>
                                     All
-                                </a>
+                                </button>
                             </li>
-                            <li className="nav-item">
-                                <a className={`nav-link ${isLinksActive ? '' : 'disabled'}`} onClick={() => handleRegionAndCountries('Asia')}>
+                            <li className="nav-item mx-2">
+                                <button className={`nav-link ps-0 pe-3 py-2 border border-top-0 border-start-0 border-end-0 ${selectedRegion === 'Asia' ? 'border-4 border-dark': 'border-bottom-0 border-light'} ${isLinksActive ? 'active border border-bottom-3' : 'disabled'}`} onClick={() => handleRegionAndCountries('Asia')}>
                                     Asia
-                                </a>
+                                </button>
                             </li>
-                            <li className="nav-item">
-                                <a className={`nav-link ${isLinksActive ? '' : 'disabled'}`} onClick={() => handleRegionAndCountries('Africa')}>
+                            <li className="nav-item mx-2">
+                                <button className={`nav-link ps-0 pe-3 py-2 border border-top-0 border-start-0 border-end-0 ${selectedRegion === 'Africa' ? 'border-4 border-dark': 'border-bottom-0 border-light'} ${isLinksActive ? 'active border border-bottom-3' : 'disabled'}`} onClick={() => handleRegionAndCountries('Africa')}>
                                     Africa
-                                </a>
+                                </button>
                             </li>
-                            <li className="nav-item">
-                                <a className={`nav-link ${isLinksActive ? '' : 'disabled'}`} onClick={() => handleRegionAndCountries('Europe')} href="#">
+                            <li className="nav-item mx-2">
+                                <button className={`nav-link ps-0 pe-3 py-2 border border-top-0 border-start-0 border-end-0 ${selectedRegion === 'Europe' ? 'border-4 border-dark': 'border-bottom-0 border-light'} ${isLinksActive ? 'active border border-bottom-3' : 'disabled'}`} onClick={() => handleRegionAndCountries('Europe')}>
                                     Europe
-                                </a>
+                                </button>
                             </li>
-                            <li className="nav-item">
-                                <a className={`nav-link ${isLinksActive ? '' : 'disabled'}`} onClick={() => handleRegionAndCountries('Americas')} href="#">
+                            <li className="nav-item mx-2">
+                                <button className={`nav-link ps-0 pe-3 py-2 border border-top-0 border-start-0 border-end-0 ${selectedRegion === 'Americas' ? 'border-4 border-dark': 'border-bottom-0 border-light'} ${isLinksActive ? 'active border border-bottom-3' : 'disabled'}`} onClick={() => handleRegionAndCountries('Americas')}>
                                     Americas
-                                </a>
+                                </button>
                             </li>
-                            <li className="nav-item">
-                                <a className={`nav-link ${isLinksActive ? '' : 'disabled'}`} onClick={() => handleRegionAndCountries('Oceania')} href="#">
+                            <li className="nav-item mx-2">
+                                <button className={`nav-link ps-0 pe-3 py-2 border border-top-0 border-start-0 border-end-0 ${selectedRegion === 'Oceania' ? 'border-4 border-dark': 'border-bottom-0 border-light'} ${isLinksActive ? 'active border border-bottom-3' : 'disabled'}`} onClick={() => handleRegionAndCountries('Oceania')}>
                                     Oceania
-                                </a>
+                                </button>
                             </li>
-                            <li className="nav-item">
-                                <a className={`nav-link ${isLinksActive ? '' : 'disabled'}`} onClick={() => handleRegionAndCountries('Polar')} href="#">
+                            <li className="nav-item mx-2">
+                                <button className={`nav-link ps-0 pe-3 py-2 border border-top-0 border-start-0 border-end-0 ${selectedRegion === 'Polar' ? 'border-4 border-dark': 'border-bottom-0 border-light'} ${isLinksActive ? 'active border border-bottom-3' : 'disabled'}`} onClick={() => handleRegionAndCountries('Polar')}>
                                     Polar
-                                </a>
+                                </button>
                             </li>
                         </ul>
                     </div>

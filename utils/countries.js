@@ -4,11 +4,11 @@ export const getCountriesOfSelectedRegion = (region, countries) => {
 
     let refinedCountries = [];
 
-    if(region !== ALL || region !== '') {
-        refinedCountries = countries.filter(country => country.region === region);
-    } else {
+    if(region == ALL) {
         refinedCountries = countries
+    } else {
+        refinedCountries = countries.filter(country => country.region === region);
     }
 
-    return refinedCountries || countries;
+    return refinedCountries;
 }
