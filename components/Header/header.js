@@ -24,7 +24,7 @@ const Header = (props) => {
                     <button 
                         type='button'
                         className="navbar-toggler" 
-                        data-bs-toggler="collapse" 
+                        data-bs-toggle="collapse" 
                         data-bs-target="#regionsList" 
                         aria-controls="regionsList"
                         aria-expanded="false"
@@ -39,7 +39,7 @@ const Header = (props) => {
                                     All
                                 </button>
                             </li>
-                            <li className="nav-item mx-2">
+                            {/* <li className="nav-item mx-2">
                                 <button className={`nav-link ps-0 pe-3 py-2 border border-top-0 border-start-0 border-end-0 ${selectedRegion === 'Asia' ? 'border-4 border-dark': 'border-bottom-0 border-light'} ${isLinksActive ? 'active border border-bottom-3' : 'disabled'}`} onClick={() => handleRegionAndCountries('Asia')}>
                                     Asia
                                 </button>
@@ -68,7 +68,7 @@ const Header = (props) => {
                                 <button className={`nav-link ps-0 pe-3 py-2 border border-top-0 border-start-0 border-end-0 ${selectedRegion === 'Polar' ? 'border-4 border-dark': 'border-bottom-0 border-light'} ${isLinksActive ? 'active border border-bottom-3' : 'disabled'}`} onClick={() => handleRegionAndCountries('Polar')}>
                                     Polar
                                 </button>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                 </div>
