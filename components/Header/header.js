@@ -1,6 +1,5 @@
 'use client';
 
-import Link from "next/link";
 import useHeader from '@/customHooks/Header/useHeader';
 
 const Header = (props) => {
@@ -16,7 +15,7 @@ const Header = (props) => {
 
     return (
         <header>
-            <nav className="navbar navbar-expand-lg navbar-light">
+            <nav className="navbar navbar-expand-lg navbar-light m-5">
                 <div className="container-sm">
                     <a className="navbar-brand text-dark fs-4 fw-bold" href={'/'}>
                         Countries
@@ -39,7 +38,7 @@ const Header = (props) => {
                                     All
                                 </button>
                             </li>
-                            {/* <li className="nav-item mx-2">
+                            <li className="nav-item mx-2">
                                 <button className={`nav-link ps-0 pe-3 py-2 border border-top-0 border-start-0 border-end-0 ${selectedRegion === 'Asia' ? 'border-4 border-dark': 'border-bottom-0 border-light'} ${isLinksActive ? 'active border border-bottom-3' : 'disabled'}`} onClick={() => handleRegionAndCountries('Asia')}>
                                     Asia
                                 </button>
@@ -68,7 +67,7 @@ const Header = (props) => {
                                 <button className={`nav-link ps-0 pe-3 py-2 border border-top-0 border-start-0 border-end-0 ${selectedRegion === 'Polar' ? 'border-4 border-dark': 'border-bottom-0 border-light'} ${isLinksActive ? 'active border border-bottom-3' : 'disabled'}`} onClick={() => handleRegionAndCountries('Polar')}>
                                     Polar
                                 </button>
-                            </li> */}
+                            </li>
                         </ul>
                     </div>
                 </div>

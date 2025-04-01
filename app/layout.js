@@ -28,7 +28,9 @@ export default function RootLayout({ children }) {
         <ReduxProvider>
           <div className="my-5">
             <Header />
-            {children}
+            <div className="container-sm">
+              {children}
+            </div>
             <Footer />
           </div>
         </ReduxProvider>
