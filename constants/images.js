@@ -1,7 +1,6 @@
 import Pine1 from '@/assets/images/pine.jpg';
 import Pine2 from '@/assets/images/pine2.webp';
-import SnowMountain from '@/assets/images/snowMountain.jpg';
-import Sunrise from '@/assets/images/';
+import Sunrise from '@/assets/images/sunrise.jpg';
 
 export const ImagesList = [
     {
@@ -11,10 +10,6 @@ export const ImagesList = [
     {
         name: 'Pine-2',
         link: Pine2
-    },
-    {
-        name: 'Snow Mountain',
-        link: SnowMountain
     },
     {
         name: 'Sunrise',

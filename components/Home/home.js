@@ -1,7 +1,11 @@
 'use client'
 import React from 'react';
-import Sliders from '@/components/Slider';
+import Image from 'next/image';
+
+import Slider from '@/components/Slider';
 import useHome from '@/customHooks/Home/useHome';
+
+import SnowMountain from '@/assets/images/snowMountains.jpg';
 import { ImagesList } from '@/constants/images';
 
 const Home = function (props) {
@@ -29,18 +33,17 @@ const Home = function (props) {
             <div className='col-md-5 border border-4 border-top-0 border-start-0 border-end-0 p-0 m-0'/>
           </div>
         </div>
-        <div className='container-fluid'>
+        <div className='container-fluid pt-4'>
           <div className='row'>
-            <div className='col-sm-12 col-md-8'>
-              <Sliders images={ImagesList} />
+            <div className='col-sm-12 col-md-9'>
+              <Slider images={ImagesList} />
             </div>
-            <div className='col-sm-12 col-md-4'>
-              <Image src='' alt={`right-image`} />
+            <div className='col-sm-12 col-md-3'>
+              <Image src={SnowMountain} height={'550'} width={'auto'} alt={`right-image`} />
             </div>
           </div>
         </div>
       </div>
-      </div> 
   )
 }
 

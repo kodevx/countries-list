@@ -1,5 +1,7 @@
+'use client'
 import React from 'react';
 import Image from 'next/image';
+import Carousel  from "react-bootstrap/Carousel";
 
 const Slider = props => {
 
@@ -7,34 +9,24 @@ const Slider = props => {
         images
     } = props;
 
-    if(images && images.length) {
+    if(images && images.length === 0) {
         return null;
     }
 
     return (
-        <div id="carouselIndicators" className="carousel slide" data-ride="carousel">
-            <ol className="carousel-indicators">
-                <li data-target="#carouselIndicators" data-slide-to="0" className="active"></li>
-                <li data-target="#carouselIndicators" data-slide-to="1"></li>
-            </ol>
-            <div class="carousel-inner" role="listbox">
-                {images.map((image, index) => (
-                    <>
-                        <div className={`carousel-item ${index === 1 ? 'active' : ''}`}>
-                            <Image className="d-block w-100" src={image.link} alt={`${image.name}-slide`} />
-                        </div>
-                    </>
-                ))}
-            </div>
-            <a className="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
-                <span className="carousel-control-prev-icon" aria-hidden="false"></span>
-                <span className="sr-only">Previous</span>
-            </a>
-            <a className="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
-                <span className="carousel-control-next-icon" aria-hidden="false"></span>
-                <span className="sr-only">Next</span>
-            </a>
-        </div>
+        <Carousel>
+            {images.map(image => (
+                <Carousel.Item key={image.name}>
+                    <Image 
+                        className="d-block w-100" 
+                        src={image.link} 
+                        height={550} 
+                        width={450} 
+                        alt={`${image.name}-slide`} 
+                    />
+                </Carousel.Item>
+            ))}
+        </Carousel>
     )
 }
 
