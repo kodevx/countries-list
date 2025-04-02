@@ -3,10 +3,12 @@ import React from 'react';
 import Image from 'next/image';
 
 import Slider from '@/components/Slider';
+import CountriesList from '@/components/CountriesList';
 import useHome from '@/customHooks/Home/useHome';
 
 import SnowMountain from '@/assets/images/snowMountains.jpg';
 import { ImagesList } from '@/constants/images';
+import { Button } from 'react-bootstrap';
 
 const Home = function (props) {
 
@@ -45,6 +47,14 @@ const Home = function (props) {
           </div>
         </div>
       </div>
+      <div className='pt-5'>
+        <CountriesList 
+          countries={countries} 
+        />
+      </div>
+      {/* <Button>
+        Load More
+      </Button> */}
     </div>
   )
 }
