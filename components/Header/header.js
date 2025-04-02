@@ -1,5 +1,9 @@
 'use client';
 
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import useHeader from '@/customHooks/Header/useHeader';
 
 const Header = (props) => {
@@ -15,24 +19,14 @@ const Header = (props) => {
 
     return (
         <header>
-            <nav className="navbar navbar-expand-lg navbar-light m-5">
-                <div className="container-sm">
-                    <a className="navbar-brand text-dark fs-4 fw-bold" href={'/'}>
-                        Countries
-                    </a>
-                    <button 
-                        type='button'
-                        className="navbar-toggler" 
-                        data-bs-toggle="collapse" 
-                        data-bs-target="#regionsList" 
-                        aria-controls="regionsList"
-                        aria-expanded="false"
-                        aria-label='Toggle Navigation'
-                    >
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse justify-content-end align-center" id="regionsList">
-                        <ul className="navbar-nav mb-2 mx-lg-0">
+            <Navbar expand="lg" bg={'#FFFFF'} className='m-5'>
+                <Container>
+                    <Navbar.Brand href={'/'}>
+                        <div className='text-dark fs-4 fw-bold'>Countries</div>
+                    </Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end align-center'>
+                    <ul className="navbar-nav mb-2 mx-lg-0">
                             <li className="nav-item mx-2">
                                 <button className={`nav-link ps-0 pe-3 py-2 border border-top-0 border-start-0 border-end-0 ${selectedRegion === 'All' ? 'border-4 border-dark': 'border-bottom-0 border-light'} ${isLinksActive ? 'active border border-bottom-3' : 'disabled'}`} onClick={() => handleRegionAndCountries('All')}>
                                     All
@@ -69,9 +63,9 @@ const Header = (props) => {
                                 </button>
                             </li>
                         </ul>
-                    </div>
-                </div>
-            </nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
         </header>
     )
 }
