@@ -45,6 +45,24 @@ a {
   box-shadow: 5px 5px lightgrey;
 }
 
+.loadMoreBtn {
+  height: 20px;
+  width: 40px;
+  background-color: black;
+  color: white;
+  transition: all ease-in-out 1s;
+}
+
+.loadMoreBtn:hover {
+  background-color: white;
+  color: black;
+  transition: all ease-in-out 1s;
+}
+
+.loadMoreBtn:disabled {
+  opacity: 0.6;
+}
+
 @media (width <= 992px) {
   .boxShadow { 
     box-shadow: 10px 10px lightgrey;

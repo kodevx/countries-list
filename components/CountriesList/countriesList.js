@@ -5,18 +5,16 @@ import Country from './country';
 
 const CountriesList = props => {
 
-    const { countries } = props;
+    const { countries, countriesToShow } = props;
 
     console.log("countries: ",countries);
 
     return (
         <div className='container-md'>
             <div className='row row-cols-1 row-cols-lg-2 g-2 g-md-3 g-lg-4'>
-                {countries.slice(0,12).map(country => (
+                {countries.slice(0, countriesToShow).map(country => (
                     <div className='col' key={country.name} >
-                        <Country
-                            countryDetails={country}
-                        />
+                        <Country countryDetails={country} />
                     </div>
                 ))}
             </div>
