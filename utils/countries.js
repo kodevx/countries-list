@@ -12,3 +12,10 @@ export const getCountriesOfSelectedRegion = (region, countries) => {
 
     return refinedCountries;
 }
+
+export const getTotalPages = (totalItems, pageSize) => {
+
+    let totalPages = Math.ceil(totalItems / pageSize);
+
+    return totalPages;
+}
