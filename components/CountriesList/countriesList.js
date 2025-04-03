@@ -11,16 +11,17 @@ const CountriesList = props => {
 
     return (
         <div className='container-md'>
-            <div className='row row-cols-2 row-gap-4'>
-                {countries.slice(0,10).map(country => (
-                    <Country
-                        key={country.name} 
-                        countryDetails={country}
-                    />
+            <div className='row row-cols-1 row-cols-lg-2 g-2 g-md-3 g-lg-4'>
+                {countries.slice(0,12).map(country => (
+                    <div className='col' key={country.name} >
+                        <Country
+                            countryDetails={country}
+                        />
+                    </div>
                 ))}
             </div>
         </div>
     )
- }
+}
 
 export default CountriesList;

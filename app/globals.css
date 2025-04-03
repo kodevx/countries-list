@@ -40,3 +40,14 @@ a {
     color-scheme: dark;
   }
 }
+
+.boxShadow {
+  box-shadow: 5px 5px lightgrey;
+}
+
+@media (width <= 992px) {
+  .boxShadow { 
+    box-shadow: 10px 10px lightgrey;
+  }
+}
+
