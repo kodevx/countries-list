@@ -15,6 +15,7 @@ const Home = function (props) {
   const { 
     countries,
     isPending,
+    selectedRegion,
     countriesToShow,
     isLoadMoreDisabled,
     handleLoadMore
@@ -47,8 +48,9 @@ const Home = function (props) {
       </div>
       <div className='pt-5'>
         <CountriesList 
+          countries={countries}
+          selectedRegion={selectedRegion}
           countriesToShow={countriesToShow}
-          countries={countries} 
         />
       </div>
       <Button 
