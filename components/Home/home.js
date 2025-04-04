@@ -1,7 +1,6 @@
 'use client'
 import React from 'react';
 import Image from 'next/image';
-import { Button } from 'react-bootstrap';
 
 import Slider from '@/components/Slider';
 import CountriesList from '@/components/CountriesList';
@@ -53,13 +52,15 @@ const Home = function (props) {
           countriesToShow={countriesToShow}
         />
       </div>
-      <Button 
-        className={'loadMoreBtn'}
-        disabled={isPending || isLoadMoreDisabled} 
-        onClick={handleLoadMore}
-      >
-        Load more
-      </Button>
+      <div className='d-flex justify-content-center pt-3'>
+        <button 
+          className={'loadMoreBtn'}
+          disabled={isPending || isLoadMoreDisabled} 
+          onClick={handleLoadMore}
+        >
+          Load more
+        </button>
+      </div>
     </div>
   )
 }

@@ -46,21 +46,22 @@ a {
 }
 
 .loadMoreBtn {
-  height: 20px;
-  width: 40px;
+  height: 40px;
+  width: 110px;
   background-color: black;
   color: white;
-  transition: all ease-in-out 1s;
+  transition: all ease-out 0.2s;
+  border-radius: 5px;
 }
 
 .loadMoreBtn:hover {
   background-color: white;
   color: black;
-  transition: all ease-in-out 1s;
+  transition: all ease-out 0.2s;
 }
 
 .loadMoreBtn:disabled {
-  opacity: 0.6;
+  opacity: 0.2;
 }
 
 @media (width <= 992px) {
