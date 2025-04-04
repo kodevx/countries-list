@@ -1,11 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { PAGE_SIZE } from '@/constants/constants';
 
 const initialState = {
     selectedRegion: '',
     refinedCountriesList: [],
     allCountries: [],
-    pageSize: 14,
-    totalCountriesCount: 0
+    currentPage: 1,
+    totalPages: 0,
+    countriesToShow: PAGE_SIZE,
+    pageSize: PAGE_SIZE
 }
 
 const countriesSlice = createSlice({
@@ -17,9 +20,7 @@ const countriesSlice = createSlice({
                 ...state,
                 selectedRegion: 'All',
                 refinedCountriesList: action.payload,
-                allCountries: action.payload,
-                pageSize: 14,
-                totalCountriesCount: action.payload.length
+                allCountries: action.payload
             }
         },
         setSelectedRegion: (state, action) => {
@@ -31,13 +32,46 @@ const countriesSlice = createSlice({
         setRefinedCountries: (state, action) => {
             return {
                 ...state,
-                refinedCountriesList: action.payload,
-                totalCountriesCount: action.payload.length
+                refinedCountriesList: action.payload
             }
-        }
+        },
+        incrementCurrentPage: (state, action) => {
+            return {
+                ...state,
+                currentPage: state.currentPage + 1
+            }
+        },
+        setTotalPages: (state, action) => {
+            return {
+                ...state,
+                totalPages: action.payload
+            }
+        },
+        setCountriesToShow: (state, action) => {
+            return {
+                ...state,
+                countriesToShow: action.payload
+            }
+        },
+        resetPagination: (state, action) => {
+            return {
+                ...state,
+                currentPage: 1,
+                totalPages: 0,
+                pageSize: PAGE_SIZE
+            }
+        },
     }
 });
 
-export const { setAllCountries, setSelectedRegion, setRefinedCountries } = countriesSlice.actions;
+export const { 
+    setAllCountries, 
+    setSelectedRegion, 
+    setRefinedCountries, 
+    incrementCurrentPage, 
+    setTotalPages, 
+    setCountriesToShow, 
+    resetPagination, 
+} = countriesSlice.actions;
 
 export default countriesSlice.reducer;

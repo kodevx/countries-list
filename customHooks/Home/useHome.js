@@ -1,24 +1,53 @@
 'use client'
-import { useEffect, useTransition, useCallback} from "react";
+import { useEffect, useTransition, useCallback, useState } from "react";
 import { useAppDispatch, useAppSelector } from "@/redux/store";
+import { usePaginationActions } from "@/redux/actions/countries";
 import { setAllCountries } from '@/redux/reducers/countries';
-import usePagination from "../Pagination/usePagination";
 
 const useHome = props => {
 
     const [isPending, startTransition] = useTransition();
 
-    const dispatch = useAppDispatch();
     const { 
+        currentPage, 
+        pageSize, 
+        totalPages,
         selectedRegion, 
-        refinedCountriesList, 
-        allCountries 
+        countriesToShow,
+        refinedCountriesList 
     } = useAppSelector(state => state.countries);
 
+    console.log("currentPage: ",currentPage);
+    console.log("totalPages: ",totalPages);
+
+    const dispatch = useAppDispatch();
+
     const [
-        { currentPage, pageSize, totalPages }, 
-        { handleCurrentPage, handlePageSizeAndTotalPages }
-    ] = usePagination();
+        { handleTotalPages, handleCurrentPage, handleCountriesToShow }
+    ] = usePaginationActions();
+
+    const handleLoadMore = useCallback(
+        () => {
+            console.log("currentPage: ",currentPage)
+            console.log("totalPage: ",totalPages)
+
+            if(currentPage + 1 < totalPages) {
+                handleCountriesToShow(pageSize * (currentPage + 1));
+                handleCurrentPage();     // Increment Current Page
+            } else if(currentPage + 1 === totalPages) {
+                handleCountriesToShow(refinedCountriesList.length);
+                handleCurrentPage();
+            }
+        }, 
+        [
+            handleCountriesToShow,
+            currentPage, 
+            totalPages, 
+            pageSize,
+            refinedCountriesList,
+            handleCurrentPage
+        ]
+    );
 
     const handleFetchCountries = useCallback(
          () => {
@@ -32,6 +61,7 @@ const useHome = props => {
                         dispatch(
                             setAllCountries(countries)
                         )
+                        handleTotalPages(countries.length, pageSize);
                     } else {
                         dispatch(
                             setAllCountries([])
@@ -42,18 +72,25 @@ const useHome = props => {
                 console.log('Countries Fetch API Error: ',error)
             }
         },
-         [dispatch]
+        [
+            dispatch, 
+            pageSize,
+            handleTotalPages
+        ]
     ); 
 
     useEffect(() => {
         handleFetchCountries();
     }, [handleFetchCountries]);
 
-    console.log("allCountries: ",allCountries);
+    const isLoadMoreDisabled = !!(currentPage === totalPages);
 
     return {
         isPending,
         selectedRegion,
+        handleLoadMore,
+        countriesToShow,
+        isLoadMoreDisabled,
         countries: refinedCountriesList
     }
 }

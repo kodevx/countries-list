@@ -15,7 +15,7 @@ const Header = (props) => {
     } = useHeader();
 
     console.log("selectedRegion: ",selectedRegion);
-    console.log("isLinksActive: ",isLinksActive);
+    // console.log("isLinksActive: ",isLinksActive);
 
     return (
         <header>

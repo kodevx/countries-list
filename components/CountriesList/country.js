@@ -14,8 +14,6 @@ const Country = props => {
         // independent
     } = countryDetails;
 
-    console.log("countryDetails: ",countryDetails);
-
     return (
         <div className={'container p-3 border border-2 border-dark'+ ' boxShadow'}>
             <div className='row'>

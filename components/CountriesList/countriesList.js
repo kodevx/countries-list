@@ -7,8 +7,6 @@ const CountriesList = props => {
 
     const { countries, countriesToShow } = props;
 
-    console.log("countries: ",countries);
-
     return (
         <div className='container-md'>
             <div className='row row-cols-1 row-cols-lg-2 g-2 g-md-3 g-lg-4'>

@@ -1,6 +1,7 @@
 'use client'
 import React from 'react';
 import Image from 'next/image';
+import { Button } from 'react-bootstrap';
 
 import Slider from '@/components/Slider';
 import CountriesList from '@/components/CountriesList';
@@ -8,19 +9,16 @@ import useHome from '@/customHooks/Home/useHome';
 
 import SnowMountain from '@/assets/images/snowMountains.jpg';
 import { ImagesList } from '@/constants/images';
-import { Button } from 'react-bootstrap';
 
 const Home = function (props) {
 
   const { 
     countries,
     isPending,
-    selectedRegion
+    countriesToShow,
+    isLoadMoreDisabled,
+    handleLoadMore
   } = useHome();
-
-  console.log("refinedCountries: ",countries);
-  console.log("Selected Region: ",selectedRegion);
-  console.log("isPending: ",isPending);
 
   return (
     <div>
@@ -49,12 +47,17 @@ const Home = function (props) {
       </div>
       <div className='pt-5'>
         <CountriesList 
+          countriesToShow={countriesToShow}
           countries={countries} 
         />
       </div>
-      {/* <Button>
-        Load More
-      </Button> */}
+      <Button 
+        className={'loadMoreBtn'}
+        disabled={isPending || isLoadMoreDisabled} 
+        onClick={handleLoadMore}
+      >
+        Load more
+      </Button>
     </div>
   )
 }
