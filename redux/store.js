@@ -5,7 +5,7 @@ import userReducer from '@/redux/reducers/users';
 
 const rootReducer =  combineReducers({ 
      countries: countriesReducer,         
-     user: userReducer
+     users: userReducer
 })
 
 const store = configureStore({

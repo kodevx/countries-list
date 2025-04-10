@@ -3,7 +3,6 @@ import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.css';
 import { ReduxProvider } from "./reduxProvider";
 
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const geistSans = Geist({
@@ -27,7 +26,6 @@ export default function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ReduxProvider>
           <div className="my-5">
-            <Header />
             <div className="container-sm">
               {children}
             </div>

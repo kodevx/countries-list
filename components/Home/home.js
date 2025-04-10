@@ -8,10 +8,12 @@ import useHome from '@/customHooks/Home/useHome';
 
 import SnowMountain from '@/assets/images/snowMountains.jpg';
 import { ImagesList } from '@/constants/images';
+import { redirect } from 'next/navigation';
 
 const Home = function (props) {
 
   const { 
+    isSignedIn,
     countries,
     isPending,
     selectedRegion,
@@ -19,6 +21,12 @@ const Home = function (props) {
     isLoadMoreDisabled,
     handleLoadMore
   } = useHome();
+
+  React.useEffect(() => {
+    if(!isSignedIn) {
+      return redirect('/login');
+    }
+  }, []);
 
   return (
     <div>

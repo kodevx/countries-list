@@ -64,9 +64,36 @@ a {
   opacity: 0.2;
 }
 
-@media (width <= 992px) {
-  .boxShadow { 
-    box-shadow: 10px 10px lightgrey;
-  }
+/* Main Classes */
+.checkbox > .form-check-input[type="checkbox"]:before {
+  /* position: relative;
+  display: block;
+  width: 11px;
+  height: 11px; */
+  border: 1px solid black !important;
+  border-radius: 0px;
+
+  /* content: "";
+  background: #FFF; */
 }
 
+.checkbox > .form-check-input[type="checkbox"]:after {
+  /* position: relative;
+  display: block;
+  left: 2px;
+  top: -11px;
+  width: 7px;
+  height: 7px; */
+  border-radius: 0px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  /* content: "";
+  background-image: linear-gradient(135deg, #B1B6BE 0%, #FFF 100%);
+  background-repeat: no-repeat;
+  background-position: center; */
+}
+
+.checkbox > .form-check-input[type="checkbox"]:disabled:after {
+  -webkit-filter: opacity(0.4);
+}

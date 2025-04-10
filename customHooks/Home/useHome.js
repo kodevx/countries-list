@@ -17,6 +17,8 @@ const useHome = props => {
         refinedCountriesList 
     } = useAppSelector(state => state.countries);
 
+    const { isSignedIn } = useAppSelector(state => state.users);
+
     console.log("currentPage: ",currentPage);
     console.log("totalPages: ",totalPages);
 
@@ -87,6 +89,7 @@ const useHome = props => {
 
     return {
         isPending,
+        isSignedIn,
         selectedRegion,
         handleLoadMore,
         countriesToShow,
