@@ -97,3 +97,8 @@ a {
 .checkbox > .form-check-input[type="checkbox"]:disabled:after {
   -webkit-filter: opacity(0.4);
 }
+
+.socialButton {
+  background-color: white;
+  border: none
+}
