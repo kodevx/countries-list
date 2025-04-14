@@ -33,6 +33,8 @@ const useSignIn = props => {
                 if(usernameOrEmail && password) {
                     handleSignIn(usernameOrEmail);
                 }
+
+                redirect('/login');
             } catch(error) {
                 console.log("SignIn Submit Error: ", error);
             }

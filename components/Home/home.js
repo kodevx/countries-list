@@ -1,6 +1,7 @@
 'use client'
 import React from 'react';
 import Image from 'next/image';
+import { redirect } from 'next/navigation';
 
 import Slider from '@/components/Slider';
 import CountriesList from '@/components/CountriesList';
@@ -8,7 +9,6 @@ import useHome from '@/customHooks/Home/useHome';
 
 import SnowMountain from '@/assets/images/snowMountains.jpg';
 import { ImagesList } from '@/constants/images';
-import { redirect } from 'next/navigation';
 
 const Home = function (props) {
 
