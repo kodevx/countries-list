@@ -2,6 +2,7 @@
 import { useCallback } from 'react';
 import useUserDetails from '@/redux/actions/users';
 import { validatePassword, validateUsernameOrEmail } from '@/utils/getValidation';
+import { redirect } from 'next/navigation';
 
 const useSignIn = props => {
 
@@ -27,6 +28,7 @@ const useSignIn = props => {
 
     const handleSubmitForm = useCallback(
         ({ usernameOrEmail, password }) => {
+            let redirectPath = '/login';
             try {
                 console.log("handleFormSubmit Callback: ",usernameOrEmail, password);
 
@@ -34,12 +36,15 @@ const useSignIn = props => {
                     handleSignIn(usernameOrEmail);
                 }
 
-                redirect('/login');
+                redirectPath = '/';
             } catch(error) {
                 console.log("SignIn Submit Error: ", error);
+                redirect = '/login';
+            } finally {
+                redirect(redirectPath);
             }
         },
-        [handleSignIn]
+        [handleSignIn, redirect]
     );
 
     return {

@@ -25,9 +25,9 @@ const usersSlice = createSlice({
             console.log("action: ",action);
             return {
                 ...state,
+                isSignedIn: true
                 // name: action.payload.name,
                 // token: action.payload.token,
-                // isSignedIn: true
             }
         },
         removeToken: (state, action) => {

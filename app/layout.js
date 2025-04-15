@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
             <div className="container-sm">
               {children}
             </div>
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </ReduxProvider>
       </body>
